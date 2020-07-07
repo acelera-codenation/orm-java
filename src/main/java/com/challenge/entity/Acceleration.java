@@ -11,6 +11,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @Builder
@@ -33,5 +34,12 @@ public class Acceleration {
     private String slug;
 
     @CreatedDate
+    @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
+
+    @OneToMany(mappedBy = "candidate")
+    private Set<Candidate> candidates;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Challenge challenge;
 }

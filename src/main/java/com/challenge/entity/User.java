@@ -13,6 +13,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @Builder
@@ -44,5 +45,12 @@ public class User {
     private String password;
 
     @CreatedDate
+    @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
+
+    @OneToMany(mappedBy = "primaryKey.Submission", fetch = FetchType.EAGER)
+    private Set<Submission> submissions;
+
+    @OneToMany(mappedBy = "primaryKey.Candidate", fetch = FetchType.EAGER)
+    private Set<Candidate> candidates;
 }

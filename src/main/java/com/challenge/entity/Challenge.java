@@ -11,6 +11,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Builder
@@ -32,5 +33,14 @@ public class Challenge {
     private String slug;
 
     @CreatedDate
+    @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
+
+    @OneToMany
+    @JoinColumn(name = "acceleration_id")
+    private List<Acceleration> accelerations;
+
+    @OneToMany
+    @JoinColumn(name = "submission_id")
+    private List<Submission> submissions;
 }

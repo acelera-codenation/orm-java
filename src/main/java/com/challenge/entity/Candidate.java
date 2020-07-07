@@ -26,6 +26,5 @@ public class Candidate {
     private long status;
 
     @CreatedDate
-    @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 }

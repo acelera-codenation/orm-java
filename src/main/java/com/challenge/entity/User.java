@@ -48,9 +48,9 @@ public class User {
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
-    @OneToMany(mappedBy = "primaryKey.Submission", fetch = FetchType.EAGER)
+    @OneToMany
     private Set<Submission> submissions;
 
-    @OneToMany(mappedBy = "primaryKey.Candidate", fetch = FetchType.EAGER)
+    @OneToMany
     private Set<Candidate> candidates;
 }

@@ -30,6 +30,5 @@ public class Submission {
     private Float score;
 
     @CreatedDate
-    @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 }

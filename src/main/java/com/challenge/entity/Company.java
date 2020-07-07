@@ -33,9 +33,8 @@ public class Company {
     private String slug;
 
     @CreatedDate
-    @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
-    @OneToMany(mappedBy = "candidate")
+    @OneToMany
     private List<Candidate> candidates;
 }

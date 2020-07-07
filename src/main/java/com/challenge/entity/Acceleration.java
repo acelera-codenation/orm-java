@@ -34,12 +34,11 @@ public class Acceleration {
     private String slug;
 
     @CreatedDate
-    @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
-    @OneToMany(mappedBy = "candidate")
+    @OneToMany
     private Set<Candidate> candidates;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private Challenge challenge;
 }

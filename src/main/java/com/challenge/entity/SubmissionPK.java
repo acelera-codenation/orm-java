@@ -1,6 +1,7 @@
 package com.challenge.entity;
 
-import javax.persistence.*;
+import javax.persistence.Embeddable;
+import javax.persistence.ManyToOne;
 import java.io.Serializable;
 
 @Embeddable

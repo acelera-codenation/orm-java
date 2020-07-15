@@ -11,9 +11,9 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
-@Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -33,4 +33,7 @@ public class Company {
 
     @CreatedDate
     private LocalDateTime createdAt;
+
+    @OneToMany(mappedBy = "id.company")
+    private List<Candidate> candidates;
 }

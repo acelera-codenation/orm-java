@@ -15,7 +15,6 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Entity
-@Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,7 +22,7 @@ import java.time.LocalDateTime;
 public class Submission {
 
     @EmbeddedId
-    private SubmissionPK id;
+    private SubmissionId id;
 
     @NotNull
     private Float score;

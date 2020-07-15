@@ -1,7 +1,6 @@
 package com.challenge.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
@@ -14,7 +13,6 @@ import java.time.LocalDateTime;
 import java.util.Set;
 
 @Entity
-@Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -36,7 +34,7 @@ public class Acceleration {
     @CreatedDate
     private LocalDateTime createdAt;
 
-    @OneToMany
+    @OneToMany(mappedBy = "id.acceleration")
     private Set<Candidate> candidates;
 
     @ManyToOne

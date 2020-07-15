@@ -1,7 +1,6 @@
 package com.challenge.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
@@ -14,7 +13,6 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Entity
-@Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,7 +20,7 @@ import java.time.LocalDateTime;
 public class Candidate {
 
     @EmbeddedId
-    private CandidatePK id;
+    private CandidateId id;
 
     @NotNull
     private long status;

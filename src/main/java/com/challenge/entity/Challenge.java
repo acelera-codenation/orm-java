@@ -14,7 +14,6 @@ import java.time.LocalDateTime;
 import java.util.Set;
 
 @Entity
-@Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -35,9 +34,9 @@ public class Challenge {
     @CreatedDate
     private LocalDateTime createdAt;
 
-    @OneToMany
+    @OneToMany(mappedBy = "challenge")
     private Set<Acceleration> accelerations;
 
-    @OneToMany
+    @OneToMany(mappedBy = "id.challenge")
     private Set<Submission> submissions;
 }

@@ -16,7 +16,6 @@ import java.time.LocalDateTime;
 import java.util.Set;
 
 @Entity
-@Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -45,12 +44,11 @@ public class User {
     private String password;
 
     @CreatedDate
-    @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
-    @OneToMany
+    @OneToMany(mappedBy = "id.user")
     private Set<Submission> submissions;
 
-    @OneToMany
+    @OneToMany(mappedBy = "id.user")
     private Set<Candidate> candidates;
 }
